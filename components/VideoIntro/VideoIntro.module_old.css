@@ -55,42 +55,42 @@
 
 /* foreground video */
 .videoWrap {
-  position: absolute;
-  /* shift right edge off screen, left edge overlaps content area */
-  right: 0;
-  top: 0;
-  width: 62%;
+  position: absolute; right: 0; top: 0;
+  width: 72%;          /* wider — right edge bleeds off screen */
   height: 100%;
   z-index: 5;
-  overflow: visible;
+  overflow: visible;   /* no hard clip */
 }
 .video {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center top;
-  /* ELLIPTICAL mask — fades in an arc, not a vertical line.
-     The ellipse is taller than wide so the fade curves inward
-     like a natural vignette from the left side */
-  -webkit-mask-image: radial-gradient(
-    ellipse 100% 120% at 72% 50%,
-    black 30%,
-    rgba(0,0,0,0.85) 48%,
-    rgba(0,0,0,0.5)  60%,
-    rgba(0,0,0,0.15) 72%,
-    transparent      84%
+  /* soft right-edge fade via mask so no hard border on the right */
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 8%,
+    rgba(0,0,0,1) 30%
   );
-  mask-image: radial-gradient(
-    ellipse 100% 120% at 72% 50%,
-    black 30%,
-    rgba(0,0,0,0.85) 48%,
-    rgba(0,0,0,0.5)  60%,
-    rgba(0,0,0,0.15) 72%,
-    transparent      84%
+  mask-image: linear-gradient(
+    to left,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 8%,
+    rgba(0,0,0,1) 30%
   );
 }
 .videoEdge {
-  /* no longer needed — mask handles the fade */
-  display: none;
+  position: absolute; inset: 0; pointer-events: none;
+  /* long, slow, smooth fade from left — no hard cutoff */
+  background: linear-gradient(
+    to right,
+    rgba(6,6,10,1)    0%,
+    rgba(6,6,10,0.92) 12%,
+    rgba(6,6,10,0.65) 28%,
+    rgba(6,6,10,0.25) 46%,
+    rgba(6,6,10,0.05) 62%,
+    transparent       78%
+  );
 }
 
 /* copy block */
