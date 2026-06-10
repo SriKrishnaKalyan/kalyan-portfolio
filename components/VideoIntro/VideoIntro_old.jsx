@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import CinematicLayer from './CinematicLayer';
 import styles from './VideoIntro.module.css';
 
 export default function VideoIntro() {
@@ -138,6 +139,7 @@ export default function VideoIntro() {
         <span>Open to Work</span>
       </div>
 
+      <CinematicLayer />
 
       {/* foreground video — autoPlay + muted for guaranteed playback */}
       <div className={styles.videoWrap}>
