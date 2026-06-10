@@ -505,19 +505,119 @@
 }
 
 /* ── responsive ──────────────────────────────────────────────────── */
+
+/* tablet */
 @media (max-width: 1024px) {
   .skillsGrid { grid-template-columns: repeat(2,1fr); }
-  .carouselCard { width: min(540px, 80vw); }
+  .carouselCard { width: min(540px, 82vw); }
 }
+
+/* large mobile / small tablet */
 @media (max-width: 900px) {
-  .aboutGrid { grid-template-columns: 1fr; }
-  .statsGrid  { grid-template-columns: 1fr 1fr; }
-  .carouselCard { width: calc(100vw - 120px); }
-  .carouselLayout { padding: 28px 24px 20px; }
+  /* snap section — less trim so more content visible */
+  .snapSection {
+    width: calc(100vw - 5vw);
+    height: calc(100dvh - 8vh);
+    margin: 4vh 2.5vw;
+    border-radius: 10px;
+  }
+
+  .sectionInner {
+    padding: clamp(20px,3vh,36px) clamp(20px,4vw,40px);
+  }
+
+  .heading { font-size: clamp(32px,7vw,52px); margin-bottom: 16px; }
+  .eyebrow { font-size: 10px; margin-bottom: 10px; }
+
+  /* about */
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    overflow-y: auto;
+  }
+  .aboutBody { font-size: 13px; line-height: 1.65; }
+  .statsGrid  { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .statNum    { font-size: 28px; }
+  .statLabel  { font-size: 10px; }
+
+  /* skills */
+  .skillsGrid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .skillCat   { font-size: 9px; }
+  .skillTag   { font-size: 10px; padding: 2px 6px; }
+
+  /* carousel layout stacks vertically */
+  .carouselLayout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 16px 16px 12px;
+    gap: 12px;
+  }
+  .carouselHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .carouselCard {
+    width: 100%;
+    padding: 16px;
+  }
+
+  /* exp card */
+  .expTitle    { font-size: 18px; }
+  .expBullets li { font-size: 12px; line-height: 1.55; }
+  .expDates    { font-size: 10px; }
+  .expCompany  { font-size: 11px; }
+  .techTag     { font-size: 10px; padding: 2px 6px; }
+
+  /* proj card */
+  .projTitle   { font-size: 18px; }
+  .projDesc    { font-size: 12px; line-height: 1.6; }
+  .projHighlight { font-size: 11px; padding: 6px 10px; }
+  .projTag     { font-size: 10px; }
+
+  /* edu card */
+  .eduYear     { font-size: 52px; }
+  .eduDegree   { font-size: 18px; }
+  .eduSchool   { font-size: 12px; }
+  .eduDetail   { font-size: 11px; }
+
+  /* contact */
+  .contactHeading { font-size: clamp(32px,8vw,56px); }
+  .contactSub     { font-size: 12px; }
+  .contactLinks   { flex-direction: column; align-items: stretch; gap: 8px; }
+  .contactLink, .contactLinkAccent, .contactBadge {
+    font-size: 12px;
+    padding: 10px 16px;
+    justify-content: center;
+  }
 }
-@media (max-width: 640px) {
+
+/* phone */
+@media (max-width: 480px) {
+  .snapSection {
+    width: calc(100vw - 12px);
+    height: calc(100dvh - 12px);
+    margin: 6px;
+    border-radius: 8px;
+  }
+
+  .sectionInner {
+    padding: 16px 14px;
+  }
+
+  .heading { font-size: clamp(26px,8vw,40px); }
+
   .skillsGrid { grid-template-columns: 1fr; }
-  .statsGrid  { grid-template-columns: 1fr; }
-  .carouselCard { width: calc(100vw - 80px); }
-  .contactLinks { flex-direction: column; align-items: center; }
+  .statsGrid  { grid-template-columns: 1fr 1fr; }
+
+  .carouselLayout { padding: 12px 10px 8px; gap: 8px; }
+  .carouselCard   { padding: 12px; }
+
+  .expTitle  { font-size: 16px; }
+  .projTitle { font-size: 16px; }
+  .eduYear   { font-size: 40px; }
+  .eduDegree { font-size: 16px; }
+
+  .contactHeading { font-size: clamp(28px,9vw,44px); }
+  .arrowBtn { width: 32px; height: 32px; }
 }
