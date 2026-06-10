@@ -101,7 +101,7 @@
   z-index: 2;
   width: 100%;
   height: 100%;
-  padding: clamp(44px,6vh,80px) clamp(48px,8vw,120px);
+  padding: clamp(28px,4vh,52px) clamp(36px,6vw,80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +111,7 @@
 .eyebrow {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(12px,1.3vw,16px);
+  font-size: clamp(10px,1vw,13px);
   font-weight: 500;
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -120,12 +120,12 @@
 }
 .heading {
   font-family: var(--font-bebas), 'Arial Black', sans-serif;
-  font-size: clamp(60px,8.5vw,118px);
+  font-size: clamp(42px,5.5vw,72px);
   font-weight: 400;
   line-height: 0.88;
   letter-spacing: 0.03em;
   color: var(--cream);
-  margin: 0 0 clamp(22px,4vh,48px) 0;
+  margin: 0 0 clamp(12px,2vh,24px) 0;
 }
 .heading span {
   color: transparent;
@@ -142,7 +142,7 @@
 }
 .aboutLeft { display: flex; flex-direction: column; }
 .aboutBody {
-  font-size: clamp(17px,1.9vw,23px);
+  font-size: clamp(13px,1.3vw,16px);
   font-weight: 300;
   line-height: 1.8;
   color: rgba(245,240,232,0.6);
@@ -173,12 +173,12 @@
 }
 .statNum {
   font-family: var(--font-bebas), 'Arial Black', sans-serif;
-  font-size: clamp(44px,6vw,76px);
+  font-size: clamp(28px,3.5vw,48px);
   color: var(--orange);
   line-height: 1; margin: 0 0 6px 0;
 }
 .statLabel {
-  font-size: clamp(13px,1.3vw,16px);
+  font-size: clamp(11px,0.9vw,13px);
   color: rgba(245,240,232,0.38);
   line-height: 1.4;
 }
@@ -206,7 +206,7 @@
   border-color: rgba(255,107,43,0.3);
 }
 .skillCat {
-  font-size: clamp(11px,1.1vw,14px);
+  font-size: clamp(9px,0.75vw,11px);
   font-weight: 600; letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255,107,43,0.72);
@@ -214,7 +214,7 @@
 }
 .skillTags { display: flex; flex-wrap: wrap; gap: 5px; }
 .skillTag {
-  font-size: clamp(13px,1.25vw,16px);
+  font-size: clamp(11px,0.9vw,13px);
   color: rgba(245,240,232,0.65);
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.09);
@@ -232,7 +232,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: clamp(36px,5vh,68px) clamp(48px,8vw,120px) clamp(24px,3.5vh,48px);
+  padding: clamp(20px,3vh,40px) clamp(36px,6vw,80px) clamp(16px,2.5vh,32px);
   gap: clamp(16px,2.5vh,28px);
 }
 
@@ -341,15 +341,15 @@
   display: flex; gap: 10px; flex-wrap: wrap; align-items: baseline;
 }
 .expDates {
-  font-size: clamp(12px,1.2vw,15px); font-weight: 500;
+  font-size: clamp(10px,0.85vw,12px); font-weight: 500;
   letter-spacing: 0.1em; color: rgba(255,107,43,0.75);
   white-space: nowrap;
 }
-.expCompany { font-size: clamp(14px,1.5vw,19px); color: rgba(245,240,232,0.45); }
-.expLocation { font-size: clamp(12px,1.2vw,16px); color: rgba(245,240,232,0.28); }
+.expCompany { font-size: clamp(11px,1vw,14px); color: rgba(245,240,232,0.45); }
+.expLocation { font-size: clamp(10px,0.85vw,12px); color: rgba(245,240,232,0.28); }
 .expTitle {
   font-family: var(--font-bebas), 'Arial Black', sans-serif;
-  font-size: clamp(26px,3.4vw,48px);
+  font-size: clamp(18px,2vw,28px);
   letter-spacing: 0.03em; color: var(--cream); line-height: 1;
 }
 .expBullets {
@@ -358,7 +358,7 @@
   flex: 1;
 }
 .expBullets li {
-  font-size: clamp(15px,1.6vw,19px); font-weight: 300;
+  font-size: clamp(12px,1.1vw,14px); font-weight: 300;
   line-height: 1.65; color: rgba(245,240,232,0.65);
   padding-left: 16px; position: relative;
 }
@@ -368,7 +368,7 @@
 }
 .expTech { display: flex; flex-wrap: wrap; gap: 5px; }
 .techTag {
-  font-size: clamp(12px,1.15vw,15px); font-weight: 500;
+  font-size: clamp(10px,0.8vw,12px); font-weight: 500;
   color: rgba(200,216,255,0.65);
   background: rgba(200,216,255,0.07);
   border: 1px solid rgba(200,216,255,0.14);
@@ -378,24 +378,24 @@
 /* ── PROJECTS card content ────────────────────────────────────── */
 .projNum {
   font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(14px,1.4vw,18px);
+  font-size: clamp(11px,0.9vw,13px);
   color: rgba(255,107,43,0.45); letter-spacing: 0.12em;
 }
 .projTitle {
   font-family: var(--font-bebas), 'Arial Black', sans-serif;
-  font-size: clamp(28px,3.8vw,54px);
+  font-size: clamp(20px,2.2vw,30px);
   letter-spacing: 0.03em; color: var(--cream); line-height: 1.02; margin: 0;
 }
 .projSub {
-  font-size: clamp(13px,1.3vw,17px); color: rgba(255,107,43,0.65);
+  font-size: clamp(10px,0.85vw,12px); color: rgba(255,107,43,0.65);
   letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
 }
 .projDesc {
-  font-size: clamp(15px,1.6vw,20px); font-weight: 300;
+  font-size: clamp(12px,1.1vw,14px); font-weight: 300;
   line-height: 1.7; color: rgba(245,240,232,0.62); margin: 0; flex: 1;
 }
 .projHighlight {
-  font-size: clamp(13px,1.3vw,17px); color: rgba(255,107,43,0.82); font-weight: 500;
+  font-size: clamp(11px,0.9vw,13px); color: rgba(255,107,43,0.82); font-weight: 500;
   padding: 8px 14px;
   background: rgba(255,107,43,0.08);
   border: 1px solid rgba(255,107,43,0.18);
@@ -403,7 +403,7 @@
 }
 .projStack { display: flex; flex-wrap: wrap; gap: 5px; }
 .projTag {
-  font-size: clamp(13px,1.2vw,16px); color: rgba(200,216,255,0.62);
+  font-size: clamp(10px,0.8vw,12px); color: rgba(200,216,255,0.62);
   background: rgba(200,216,255,0.06); border: 1px solid rgba(200,216,255,0.13);
   border-radius: 3px; padding: 3px 8px;
 }
@@ -412,17 +412,17 @@
 .eduCard { justify-content: center; gap: clamp(14px,2vh,28px); }
 .eduYear {
   font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(80px,13vw,180px);
+  font-size: clamp(48px,7vw,100px);
   color: rgba(255,107,43,0.10); line-height: 1;
   text-shadow: 0 0 60px rgba(255,107,43,0.06);
 }
 .eduDegree {
   font-family: var(--font-bebas), 'Arial Black', sans-serif;
-  font-size: clamp(30px,4.5vw,66px);
+  font-size: clamp(20px,2.5vw,34px);
   letter-spacing: 0.03em; color: var(--cream); line-height: 1.05;
 }
-.eduSchool { font-size: clamp(17px,2vw,26px); color: rgba(245,240,232,0.5); }
-.eduDetail { font-size: clamp(15px,1.6vw,21px); color: rgba(245,240,232,0.35); font-style: italic; line-height: 1.6; }
+.eduSchool { font-size: clamp(13px,1.3vw,17px); color: rgba(245,240,232,0.5); }
+.eduDetail { font-size: clamp(11px,1vw,14px); color: rgba(245,240,232,0.35); font-style: italic; line-height: 1.6; }
 
 /* ── CONTACT ────────────────────────────────────────────────────── */
 .contactInner {
@@ -432,14 +432,14 @@
 }
 .contactHeading {
   font-family: var(--font-bebas), 'Arial Black', sans-serif;
-  font-size: clamp(64px,11vw,160px);
+  font-size: clamp(40px,6vw,84px);
   font-weight: 400; line-height: 0.87;
   letter-spacing: 0.03em; color: var(--cream);
   margin: 0 0 clamp(12px,2vh,28px) 0;
 }
 .contactHeading span { color: transparent; -webkit-text-stroke: 2px rgba(245,240,232,0.35); }
 .contactSub {
-  font-size: clamp(16px,1.8vw,22px); font-weight: 300;
+  font-size: clamp(12px,1.2vw,15px); font-weight: 300;
   line-height: 1.7; color: rgba(245,240,232,0.42);
   max-width: 580px;
 }
@@ -456,7 +456,7 @@
   border: 1px solid rgba(220,80,40,0.28);
   border-radius: 6px;
   box-shadow: inset 0 1px 0 rgba(255,160,80,0.1), 0 4px 16px rgba(0,0,0,0.3);
-  font-size: clamp(14px,1.4vw,18px); font-weight: 500; letter-spacing: 0.04em;
+  font-size: clamp(12px,1vw,14px); font-weight: 500; letter-spacing: 0.04em;
   color: rgba(245,240,232,0.72); text-decoration: none;
   transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
@@ -479,7 +479,7 @@
     inset 0 1px 0 rgba(255,160,80,0.18),
     0 0 16px rgba(255,107,43,0.10),
     0 4px 16px rgba(0,0,0,0.3);
-  font-size: clamp(14px,1.4vw,18px); font-weight: 600;
+  font-size: clamp(12px,1vw,14px); font-weight: 600;
   letter-spacing: 0.04em;
   color: rgba(255,160,80,0.95);
   text-decoration: none;
