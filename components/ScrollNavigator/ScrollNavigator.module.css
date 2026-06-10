@@ -41,6 +41,7 @@
 /* ── DOWN button — fixed bottom-centre ──────────────────────── */
 .downNav {
   position: fixed;
+  z-index: 99; /* below controls z-index:200 */
   bottom: clamp(24px, 4vh, 44px);
   left: 50%;
   transform: translateX(-50%);
@@ -63,6 +64,7 @@
 /* ── UP button — fixed top-centre ───────────────────────────── */
 .upNav {
   position: fixed;
+  z-index: 99;
   top: clamp(24px, 4vh, 44px);
   left: 50%;
   transform: translateX(-50%);

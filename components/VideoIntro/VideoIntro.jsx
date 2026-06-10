@@ -17,7 +17,8 @@ export default function VideoIntro() {
   const controlsRef = useRef(null);
   const hintRef     = useRef(null);
 
-  const [isMuted,   setIsMuted]   = useState(true);
+  const [isMuted,     setIsMuted]     = useState(true);
+  const [videoStarted, setVideoStarted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasEnded,  setHasEnded]  = useState(false);
   const [showHint,  setShowHint]  = useState(false);
@@ -214,6 +215,27 @@ export default function VideoIntro() {
           <span className={styles.soundPulse} />
           <span>Tap anywhere for sound</span>
         </div>
+      )}
+
+      {/* Mobile tap-to-play overlay — iOS Safari blocks autoPlay even when muted */}
+      {!videoStarted && (
+        <button
+          className={styles.tapToPlay}
+          onClick={() => {
+            const v = videoRef.current;
+            if (v) {
+              v.play().then(() => {
+                setIsPlaying(true);
+                setVideoStarted(true);
+              }).catch(() => {});
+            }
+          }}
+          aria-label="Tap to play video"
+        >
+          <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M4 2.5l10 5.5-10 5.5V2.5z"/>
+          </svg>
+        </button>
       )}
 
     </section>
