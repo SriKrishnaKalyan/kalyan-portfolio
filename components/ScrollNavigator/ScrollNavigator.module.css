@@ -1,0 +1,130 @@
+/* ScrollNavigator.module.css */
+
+/* ── shared ring style used by both buttons ─────────────────── */
+.ring {
+  position: relative;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(245,240,232,0.28);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.3s, background 0.3s;
+}
+.ring::after {
+  content: '';
+  position: absolute; inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,107,43,0.20);
+  animation: ringPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes ringPulse {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  70%  { transform: scale(1.48); opacity: 0; }
+  100% { transform: scale(1.48); opacity: 0; }
+}
+
+/* ── shared label ────────────────────────────────────────────── */
+.label {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.40);
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+/* ── DOWN button — fixed bottom-centre ──────────────────────── */
+.downNav {
+  position: fixed;
+  bottom: clamp(24px, 4vh, 44px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.downNav .label { order: -1; } /* label above ring */
+.downNav:hover .label  { color: rgba(255,107,43,0.9); }
+.downNav:hover .ring   { border-color: rgba(255,107,43,0.5); background: rgba(255,107,43,0.08); }
+.downNav:hover .chevronDown { border-color: #fff; }
+
+/* ── UP button — fixed top-centre ───────────────────────────── */
+.upNav {
+  position: fixed;
+  top: clamp(24px, 4vh, 44px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.upNav .label { order: 1; } /* label BELOW ring (ring is on top, label below) */
+.upNav:hover .label    { color: rgba(255,107,43,0.9); }
+.upNav:hover .ring     { border-color: rgba(255,107,43,0.5); background: rgba(255,107,43,0.08); }
+.upNav:hover .chevronUp { border-color: #fff; }
+
+/* ── DOWN chevron — points down, GSAP rotates to up at contact ─ */
+.chevronDown {
+  display: block;
+  width: 11px; height: 11px;
+  border-right: 1.5px solid rgba(245,240,232,0.85);
+  border-bottom: 1.5px solid rgba(245,240,232,0.85);
+  transform: rotate(45deg) translateY(-2px);
+  animation: bounceDown 2s ease-in-out infinite;
+}
+@keyframes bounceDown {
+  0%,100% { opacity: 0.5; margin-top: 0; }
+  50%     { opacity: 1;   margin-top: 4px; }
+}
+
+/* ── UP chevron — always points up ─────────────────────────── */
+.chevronUp {
+  display: block;
+  width: 11px; height: 11px;
+  border-left: 1.5px solid rgba(245,240,232,0.85);
+  border-top: 1.5px solid rgba(245,240,232,0.85);
+  transform: rotate(45deg) translateY(2px);
+  animation: bounceUp 2s ease-in-out infinite;
+}
+@keyframes bounceUp {
+  0%,100% { opacity: 0.5; margin-bottom: 0; }
+  50%     { opacity: 1;   margin-bottom: 4px; }
+}
+
+/* ── progress dots (down button only) ──────────────────────── */
+.dots {
+  display: flex; gap: 5px; align-items: center;
+}
+.dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(245,240,232,0.16);
+  transition: background 0.3s, transform 0.3s;
+}
+.dotActive {
+  background: rgba(255,107,43,0.75);
+  transform: scale(1.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevronDown, .chevronUp, .ring::after { animation: none; }
+}

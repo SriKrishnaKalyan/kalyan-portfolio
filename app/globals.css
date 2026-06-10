@@ -1,42 +1,31 @@
+/* globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --orange:     #FF6B2B;
+  --cream:      #F5F0E8;
+  --dark:       #06060a;
+  --glass-bg:   rgba(255,255,255,0.055);
+  --glass-bdr:  rgba(255,255,255,0.11);
+  --glass-blur: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+html {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* no scroll-behavior here — snap container handles it */
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+body {
+  background: #000; /* black gap between sections shows off the border */
+  color: var(--cream);
+  font-family: var(--font-inter), 'Helvetica Neue', sans-serif;
+  /* body must NOT be overflow:hidden — the snap container inside scrolls */
+  overflow: hidden;
+  height: 100dvh;
+  width: 100vw;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+button { font-family: inherit; cursor: pointer; }
+img, video { display: block; max-width: 100%; }
