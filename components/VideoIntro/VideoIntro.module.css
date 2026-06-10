@@ -72,7 +72,7 @@
      The ellipse is taller than wide so the fade curves inward
      like a natural vignette from the left side */
   -webkit-mask-image: radial-gradient(
-    ellipse 100% 120% at 72% 50%,
+    ellipse 88% 110% at 75% 50%,
     black 30%,
     rgba(0,0,0,0.85) 48%,
     rgba(0,0,0,0.5)  60%,
@@ -80,7 +80,7 @@
     transparent      84%
   );
   mask-image: radial-gradient(
-    ellipse 100% 120% at 72% 50%,
+    ellipse 88% 110% at 75% 50%,
     black 30%,
     rgba(0,0,0,0.85) 48%,
     rgba(0,0,0,0.5)  60%,
