@@ -35,7 +35,7 @@ export default function CinematicLayer() {
       ctx.fillStyle = g;
       ctx.fillRect(0,0,64,64);
 
-      const N = 120;
+      const N = 200;
       const pos  = new Float32Array(N*3);
       const col  = new Float32Array(N*3);
       const orig = new Float32Array(N*3);
@@ -44,10 +44,7 @@ export default function CinematicLayer() {
       const pal  = [[1,.55,.2],[1,.72,.35],[1,.87,.6],[.85,.9,1],[1,1,.96]];
 
       for (let i=0; i<N; i++) {
-        // bias to left side — right side (face area) stays clear
-        // x range: -85 to +20 (left-weighted) instead of -85 to +85
-        const x = (Math.random() * 105) - 85;
-        const y=(Math.random()-.5)*95, z=(Math.random()-.5)*65;
+        const x=(Math.random()-.5)*170, y=(Math.random()-.5)*95, z=(Math.random()-.5)*65;
         pos[i*3]=x; pos[i*3+1]=y; pos[i*3+2]=z;
         orig[i*3]=x; orig[i*3+1]=y; orig[i*3+2]=z;
         ph[i]=Math.random()*Math.PI*2;
@@ -64,7 +61,7 @@ export default function CinematicLayer() {
         size:4, map: new THREE.CanvasTexture(sc),
         vertexColors:true,
         blending: THREE.AdditiveBlending,
-        depthWrite:false, transparent:true, opacity:0.32, sizeAttenuation:true,
+        depthWrite:false, transparent:true, opacity:0.5, sizeAttenuation:true,
       });
 
       points = new THREE.Points(geo, mat);
