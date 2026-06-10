@@ -264,8 +264,8 @@ export default function Home() {
               <span className={styles.eyebrow}>About</span>
               <h2 className={styles.heading}>Building things that<br /><span>actually work.</span></h2>
               <div className={styles.aboutBody}>
-                <p>I'm Sri Krishna Kalyan Bandaru — ML Engineer with a Master of Artificial Intelligence &amp; Machine Learning from the University of Adelaide (GPA 6.1, 2025) and a prior Master's in Mechatronics Engineering from Tor Vergata, Rome (106/110).</p>
-                <p>My background spans the full AI pipeline: dataset collection and annotation, model training and rigorous evaluation, production API deployment, and edge hardware integration. I've shipped CV systems for infrastructure inspection, autonomous UAV navigation, and on-device inference on microcontrollers.</p>
+                <p>I&apos;m Sri Krishna Kalyan Bandaru — ML Engineer with a Master of Artificial Intelligence &amp; Machine Learning from the University of Adelaide (GPA 6.1, 2025) and a prior Master&apos;s in Mechatronics Engineering from Tor Vergata, Rome (106/110).</p>
+                <p>My background spans the full AI pipeline: dataset collection and annotation, model training and rigorous evaluation, production API deployment, and edge hardware integration. I&apos;ve shipped CV systems for infrastructure inspection, autonomous UAV navigation, and on-device inference on microcontrollers.</p>
                 <p>Full Australian working rights (Subclass 485). Open to ML Engineer, Data Scientist, Computer Vision, and Robotics/Autonomous Systems roles — anywhere in Australia.</p>
               </div>
             </div>
@@ -366,7 +366,7 @@ export default function Home() {
       <section className={styles.snapSection}>
         <div className={`${styles.sectionInner} ${styles.contactInner}`}>
           <span className={styles.eyebrow}>Get in Touch</span>
-          <h2 className={styles.contactHeading}>Let's build<br /><span>something.</span></h2>
+          <h2 className={styles.contactHeading}>Let&apos;s build<br /><span>something.</span></h2>
           <p className={styles.contactSub}>
             Open to ML Engineer, Data Scientist, Computer Vision, and Robotics/Autonomous Systems roles — anywhere in Australia. Full working rights (Subclass 485).
           </p>
