@@ -534,8 +534,8 @@
     padding: clamp(20px,3vh,36px) clamp(20px,4vw,40px);
   }
 
-  .heading { font-size: clamp(32px,7vw,52px); margin-bottom: 16px; }
-  .eyebrow { font-size: 10px; margin-bottom: 10px; }
+  .heading { font-size: clamp(28px,6vw,44px); margin-bottom: 10px; }
+  .eyebrow { font-size: 9px; margin-bottom: 6px; }
 
   /* about */
   .aboutGrid {
@@ -548,10 +548,16 @@
   .statNum    { font-size: 28px; }
   .statLabel  { font-size: 10px; }
 
-  /* skills */
-  .skillsGrid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .skillCat   { font-size: 9px; }
-  .skillTag   { font-size: 10px; padding: 2px 6px; }
+  /* skills — everything miniaturised to fit in viewport */
+  .skillsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    overflow-y: auto;
+  }
+  .skillCard  { padding: 8px 10px; border-radius: 7px; }
+  .skillCat   { font-size: 8px; letter-spacing: 0.12em; margin: 0 0 5px 0; }
+  .skillTags  { gap: 3px; }
+  .skillTag   { font-size: 9px; padding: 2px 5px; border-radius: 3px; }
 
   /* carousel layout stacks vertically */
   .carouselLayout {
@@ -615,8 +621,11 @@
 
   .heading { font-size: clamp(26px,8vw,40px); }
 
-  .skillsGrid { grid-template-columns: 1fr; }
+  .skillsGrid { grid-template-columns: 1fr 1fr; } /* keep 2 col on phone too */
   .statsGrid  { grid-template-columns: 1fr 1fr; }
+  .skillCard  { padding: 6px 8px; }
+  .skillCat   { font-size: 7.5px; margin: 0 0 4px 0; }
+  .skillTag   { font-size: 8.5px; padding: 1px 4px; }
 
   .carouselLayout { padding: 12px 10px 8px; gap: 8px; }
   .carouselCard   { padding: 12px; }
